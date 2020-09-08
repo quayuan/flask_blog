@@ -70,3 +70,9 @@ def create_app(config, enable_config_file=False):
     app.scheduler.start()
 
     # ---- Configure scheduler end -----#
+
+    # 注册用户模块
+    from .resources.user import user_bp
+    app.register_blueprint(user_bp)
+
+    # TODO:设计数据库
